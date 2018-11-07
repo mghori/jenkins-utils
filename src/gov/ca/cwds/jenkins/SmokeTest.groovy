@@ -11,8 +11,6 @@ class SmokeTest {
     println "smoketest"
     println path
     println "test"
-    def boo = "${env.WORKSPACE}"
-    println boo
   }
   
 }
