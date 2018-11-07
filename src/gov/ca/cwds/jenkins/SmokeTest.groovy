@@ -8,10 +8,9 @@ class SmokeTest {
   }
   
   def runSmokeTest(path) {
-    echo "smoketest"
-    println "smoketest"
-    println path
-    println "test"
+    out.println "smoketest"
+    out.println path
+    out.println "test"
   }
   
 }
