@@ -10,11 +10,9 @@ class SmokeTest {
   def runSmokeTest(path) {
     println "smoketest"
     println path
-    def test = sh (script: path,  returnStdout: true)
-    println test
-    if (test.contains("smoketest passed")) {
-          throw new Exception("'${test}'")
-    }
+    println "test"
+    def boo = "${env.WORKSPACE}"
+    println boo
   }
   
 }
