@@ -8,11 +8,10 @@ class SmokeTest {
   }
   
   def runSmokeTest(path) {
-    echo "smoketest"
-    echo "${workspace}
-    echo "${path}
+    println "smoketest"
+    println path
     def test = sh (script: path,  returnStdout: true)
-    echo "Test: ${test}"
+    println test
     if (test.contains("smoketest passed")) {
           throw new Exception("'${test}'")
     }
