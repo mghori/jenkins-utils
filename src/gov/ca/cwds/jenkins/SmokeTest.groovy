@@ -8,9 +8,9 @@ class SmokeTest {
   }
   
   def runSmokeTest(path) {
-    out.println "smoketest"
-    out.println path
-    out.println "test"
+    Logger.log("smoketest")
+    Logger.log(path)
+    Logger.log("message")
   }
   
 }
