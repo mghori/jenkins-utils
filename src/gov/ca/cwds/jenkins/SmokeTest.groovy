@@ -8,7 +8,7 @@ class SmokeTest {
   }
   
   def runSmokeTest(path) {
-    echo smoketest
+    echo "smoketest"
     println "smoketest"
     println path
     println "test"
