@@ -1,5 +1,5 @@
 #!/usr/bin/env groovy
-import gov.ca.cwds.jenkins.ContainerScanner
+import gov.ca.cwds.jenkins.SmokeTest
 
 def call(String path) {
   smokeTest = new SmokeTest(path)
