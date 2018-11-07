@@ -8,14 +8,10 @@ class SmokeTest {
   }
   
   def runSmokeTest(path) {
-    Logger.log("smoketest")
-    Logger.log(path)
-    def test = path.execute().text
-    Logger.log(test)
+     def test = path.execute().text
     if (test.contains("smoketest failed")) {
         throw new Exception("'${test}'")
     }
-    Logger.log("message")
   }
   
 }
