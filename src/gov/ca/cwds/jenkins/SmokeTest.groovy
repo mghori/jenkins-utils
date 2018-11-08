@@ -15,6 +15,7 @@ class SmokeTest {
     if (test.contains("smoketest failed")) {
         script.error ("'${test}'")
     }
+    script.echo "smoke test passed"
   }
   
 }
