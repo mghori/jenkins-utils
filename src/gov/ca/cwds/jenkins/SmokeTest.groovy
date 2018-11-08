@@ -9,7 +9,7 @@ class SmokeTest {
     this.path = path
   }
   
-  def runSmokeTest(script, path) {
+  def runSmokeTest(path) {
      script.echo "running smoke test"
      def test = path.execute().text
     if (test.contains("smoketest failed")) {
