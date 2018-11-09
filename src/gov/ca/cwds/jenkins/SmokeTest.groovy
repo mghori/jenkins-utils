@@ -10,12 +10,13 @@ class SmokeTest {
   }
   
   def runSmokeTest(path) {
-     script.echo "running smoke test"
      def test = path.execute().text
     if (test.contains("smoketest failed")) {
         script.error ("'${test}'")
+        return "smoke test failed"
     }
     script.echo "smoke test passed"
+    return "smoke test passed"
   }
   
 }
