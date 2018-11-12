@@ -12,7 +12,6 @@ class SmokeTesterSpecification extends Specification {
   }
 
   def "#runSmokeTest"() {
-    def buildArguments
 
     given:
     def pipeline = Mock(PipeLineScript)
