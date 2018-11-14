@@ -9,7 +9,9 @@ class SmokeTester {
   
   def runSmokeTest(path) {
     
-    def cmd = [path, script.SMOKE_TEST_URL]
+    def url = script.SMOKE_TEST_URL ?: "test"
+    script.echo url
+    def cmd = [path, url]
     def test = cmd.execute().text
     if (test.contains("smoketest passed")) {
         script.echo "smoke test passed"
