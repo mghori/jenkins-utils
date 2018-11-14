@@ -18,8 +18,6 @@ class SmokeTester {
         return "smoke test passed"
     }
     script.error ("'${test}'")
-    script.echo "smoke test failed"
-    return "smoke test failed"
   }
   
 }
