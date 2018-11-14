@@ -7,10 +7,8 @@ class SmokeTester {
     this.script = script
   }
   
-  def runSmokeTest(path) {
-    
-    def url = script.SMOKE_TEST_URL ?: "test"
-    script.echo url
+  def runSmokeTest(path, url) {
+
     def cmd = [path, url]
     def test = cmd.execute().text
     if (test.contains("smoketest passed")) {
