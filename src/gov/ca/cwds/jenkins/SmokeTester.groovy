@@ -11,15 +11,12 @@ class SmokeTester {
     
     def cmd = [path, script.SMOKE_TEST_URL]
     def test = cmd.execute().text
-    script.echo "TEST:'${test}'"
-    script.echo script.SMOKE_TEST_URL
-    script.echo "TEST:'${test}'"
-    if (test.contains("smoketest failed")) {
-        script.error ("'${test}'")
-        return "smoke test failed"
+    if (test.contains("smoketest passed")) {
+        return "smoke test passed"
     }
-    script.echo "smoke test passed"
-    return "smoke test passed"
+    script.error ("'${test}'")
+    script.echo "smoke test failed"
+    return "smoke test failed"
   }
   
 }
