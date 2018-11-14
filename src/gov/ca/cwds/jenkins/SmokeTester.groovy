@@ -8,7 +8,6 @@ class SmokeTester {
   }
   
   def runSmokeTest(path) {
-    script.echo "SMOKE:${SMOKE_TEST_URL}"
     def test = path.execute().text
     script.echo "TEST:'${test}'"
     if (test.contains("smoketest failed")) {
