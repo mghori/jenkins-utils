@@ -9,6 +9,7 @@ class SmokeTester {
   
   def runSmokeTest(path) {
     def test = path.execute().text
+    script.echo "'${test}'"
     if (test.contains("smoketest failed")) {
         script.error ("'${test}'")
         return "smoke test failed"
