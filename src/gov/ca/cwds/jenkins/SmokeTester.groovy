@@ -8,6 +8,7 @@ class SmokeTester {
   }
   
   def runSmokeTest(path) {
+    def cmd = [path, "http://dashboard:8888/system-information"]
     def test = path.execute().text
     script.echo "TEST:'${test}'"
     if (test.contains("smoketest failed")) {
