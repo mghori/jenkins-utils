@@ -8,8 +8,9 @@ class SmokeTester {
   }
   
   def runSmokeTest(path, url) {
-
-    def test = script.sh (script: "${path} ${url}", returnStdout: true).trim()
+    script.echo "${path}"
+    script.echo " ${url}"
+    def test = script.sh (script: '"${path}" "${url}"', returnStdout: true).trim()
     if (test.contains("smoketest passed")) {
         script.echo "smoke test passed"
         return "smoke test passed"
