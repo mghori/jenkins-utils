@@ -9,8 +9,7 @@ class SmokeTester {
   
   def runSmokeTest(path, url) {
 
-    def cmd = [path, url]
-    def test = cmd.execute().text
+    def test = sh (script: 'path url',  returnStdout: true).trim()
     if (test.contains("smoketest passed")) {
         script.echo "smoke test passed"
         return "smoke test passed"
