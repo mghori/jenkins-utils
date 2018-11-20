@@ -17,6 +17,8 @@ class LabelChecker {
     script.echo "response"
     script.echo response
     def labels = script.readJSON(text: response).collect { it.name }
+    script.echo "labels"
+    script.echo labels
     new VersionIncrement().increment(labels)
   }
 }
