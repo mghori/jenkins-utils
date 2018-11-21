@@ -20,7 +20,6 @@ class SemVer {
     script.echo label
     def existingTags = tagFetcher.getTags()
     script.echo "existingTags"
-    script.echo existingTags
     if (!IncrementTypes.values().collect({ it.toString()}).contains(label.toUpperCase())) {
       def event = pullRequestEvent.getEvent()
       def labels = event.labels.collect([]) { it.name }
@@ -30,7 +29,6 @@ class SemVer {
     }
     script.echo "label2"
     script.echo label
-    script.echo existingTags
     newTagGenerator.newTag(existingTags, label)
   }
 }
