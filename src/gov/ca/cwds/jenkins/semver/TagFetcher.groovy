@@ -16,7 +16,6 @@ class TagFetcher {
     script.echo rawTags
     script.echo "list"
     def list = rawTags.split("\n").findAll { it =~ /(^\d+\.\d+\.\d+)/ }
-    script.echo list
     script.echo "list collect"
     list.collect { tag ->
        (tag =~ /(^\d+\.\d+\.\d+)/).with { it.hasGroup() ? it[0][0] : null }
