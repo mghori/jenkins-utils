@@ -8,6 +8,8 @@ class PullRequestEvent {
   }
 
   def getEvent() {
+    script.echo "pull_request_event"
+    script.echo script.env.pull_request_event
     script.readJSON text: script.env.pull_request_event
   }
 }
