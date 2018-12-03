@@ -5,11 +5,7 @@ import com.cloudbees.groovy.cps.NonCPS
 class NewTagGenerator {
 
   def newTag(tags, increment) {
-    echo "tags increment"
-    echo tags
-    echo increment
     def latestTag = mostRecentVersion(tags)
-    echo latestTag
     def (major, minor, patch) = latestTag.tokenize(".").collect { it as Integer }
     switch (increment) {
       case IncrementTypes.MAJOR:
