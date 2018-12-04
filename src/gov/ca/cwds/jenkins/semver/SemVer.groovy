@@ -27,7 +27,6 @@ class SemVer {
       //def labels = event.labels.collect([]) { it.name }
       def labels = ["patch"]
       script.echo "pull request event labels"
-      script.echo labels
       label = versionIncrement.increment(labels)
     } else {
       script.echo "increment 2"
