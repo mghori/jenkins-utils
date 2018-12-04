@@ -22,10 +22,10 @@ class SemVer {
     script.echo "existingTags"
     if (!IncrementTypes.values().collect({ it.toString()}).contains(label.toUpperCase())) { 
       script.echo "increment 1"
-      def event = pullRequestEvent.getEvent()
+      //def event = pullRequestEvent.getEvent()
       script.echo "pull request event"
-      script.echo event
-      def labels = event.labels.collect([]) { it.name }
+      //def labels = event.labels.collect([]) { it.name }
+      def labels = ["patch"]
       script.echo "pull request event labels"
       script.echo labels
       label = versionIncrement.increment(labels)
