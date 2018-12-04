@@ -33,7 +33,6 @@ class SemVer {
       label = label.toUpperCase() as IncrementTypes
     }
     script.echo "label2"
-    script.echo label
     newTagGenerator.newTag(existingTags, label)
   }
 }
