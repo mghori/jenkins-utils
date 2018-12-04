@@ -1,7 +1,6 @@
 package gov.ca.cwds.jenkins.semver
 
 class VersionIncrement {
-  echo "version inc"
   def increment(labels) {
     def (versionIncrement, versionIncrementsFound) = assignIncrement(labels)
     if(versionIncrementsFound > 1)
@@ -12,7 +11,6 @@ class VersionIncrement {
   }
 
   private assignIncrement(labels) {
-    echo "assign inc"
     def versionIncrement
     def versionIncrementsFound = 0
     labels.each { label ->
