@@ -20,11 +20,13 @@ class SemVer {
     script.echo label
     def existingTags = tagFetcher.getTags()
     script.echo "existingTags"
-    if (!IncrementTypes.values().collect({ it.toString()}).contains(label.toUpperCase())) {
+    if (!IncrementTypes.values().collect({ it.toString()}).contains(label.toUpperCase())) { 
+      script.echo "increment 1"
       def event = pullRequestEvent.getEvent()
       def labels = event.labels.collect([]) { it.name }
       label = versionIncrement.increment(labels)
     } else {
+      script.echo "increment 2"
       label = label.toUpperCase() as IncrementTypes
     }
     script.echo "label2"

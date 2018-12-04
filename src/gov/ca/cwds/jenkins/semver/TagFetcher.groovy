@@ -13,6 +13,7 @@ class TagFetcher {
     script.echo pwd
     def rawTags = script.sh(script: "git tag", returnStdout: true)
     script.echo "rawTags"
+    script.echo rawTags
     def list = rawTags.split("\n").findAll { it =~ /(^\d+\.\d+\.\d+)/ }
     script.echo "list collect"
     list.collect { tag ->
