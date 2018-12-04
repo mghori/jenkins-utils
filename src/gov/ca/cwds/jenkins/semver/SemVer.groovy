@@ -24,6 +24,7 @@ class SemVer {
       script.echo "increment 1"
       def event = pullRequestEvent.getEvent()
       script.echo "pull request event"
+      script.echo event
       def labels = event.labels.collect([]) { it.name }
       script.echo "pull request event labels"
       script.echo labels
